@@ -32,9 +32,9 @@ module.exports = (testers) ->
 						expect(actualStr).to.equal(expectedStr)
 						done()
 
-				test 'documents should have urls without extensions', (done) ->
+				test 'documents except 404.html should have urls without extensions', (done) ->
 					actualUrls = tester.docpad.getCollection('documents').map (doc) -> doc.get('url')
-					expectedUrls = ['/', '/hi', '/welcome']
+					expectedUrls = ['/', '/404.html', '/hi', '/welcome']
 					expect(actualUrls.sort()).to.deep.equal(expectedUrls)
 					done()
 
@@ -43,6 +43,6 @@ module.exports = (testers) ->
 					tester.docpad.action 'generate', (err) ->
 						return done(err) if err
 						actualUrls = tester.docpad.getCollection('documents').map (doc) -> doc.get('url')
-						expectedUrls = ['/', '/hi', '/welcome/']
+						expectedUrls = ['/', '/404.html', '/hi', '/welcome/']
 						expect(actualUrls.sort()).to.deep.equal(expectedUrls)
 						done()

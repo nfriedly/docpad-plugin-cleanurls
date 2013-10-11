@@ -26,7 +26,7 @@ module.exports = (BasePlugin) ->
 		# Clean URLs for Document
 		cleanUrlsForDocument: (document) =>
 			# skip any files that have been flagged appropriately
-			return if document.getMeta('skipCleanUrls') is true
+			return document  if document.getMeta('cleanurls') is false
 			# Prepare
 			url = document.get('url')
 			pathUtil = require('path')
@@ -93,7 +93,7 @@ module.exports = (BasePlugin) ->
 				# Cycle
 				collection.forEach (document) ->
 					# Check
-					return  if document.get('write') is false or document.get('ignore') is true or document.get('render') is false or document.getMeta('skipCleanUrls') is true
+					return  if document.get('write') is false or document.get('ignore') is true or document.get('render') is false or document.getMeta('cleanurls') is false
 
 					# Prepare
 					encoding = document.get('encoding')

@@ -37,17 +37,15 @@ Enable to generate `document.url`s like `'/beep/'` instead of `/beep`.  Defaults
 
 ### skipCleanUrls
 
-Add `skipCleanUrls: true` as metadata to any document that you would like to bypass the normal cleanurls processing on.  For example, you may want to bypass cleanurls processing for your 404.html.md page.
 
-```
+### Skipping a document
+
+Place `cleanurls: false` in the metadata of a document to prevent the cleanurls plugin from modifying it.
+
+``` markdown
 ---
-layout: page
-title: Oops! Page Not Found
-skipCleanUrls: true
+cleanurls: false
 ---
-
-Oops! Page Not Found.
-
 ```
 
 ## History

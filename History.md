@@ -1,5 +1,9 @@
 ## History
 
+- v2.5.2 October 10, 2013
+	- Optionally skip using cleanurls on a document based on a metadata switch
+		- Thanks to [Erv Walter](https://github.com/ervwalter) for [pull request #6](https://github.com/docpad/docpad-plugin-cleanurls/pull/6)
+
 - v2.5.1 August 20, 2013
 	- Dependency upgrades
 
